@@ -27,7 +27,6 @@ const Tasks = ({loading, setLoading, tasks, setTask}) =>{
 
     const Item = ({title, description, num, id, deadline}) =>{
         const [expanded, setExpanded] = useState(false);
-        const current = new Date();
         return(
             <Box sx={{
                     display: 'flex',
