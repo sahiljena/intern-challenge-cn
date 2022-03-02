@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from "react";
+import React,{useState} from "react";
 import {
     Typography,
     Button,
@@ -28,7 +28,6 @@ const Tasks = ({loading, setLoading, tasks, setTask}) =>{
     const Item = ({title, description, num, id, deadline}) =>{
         const [expanded, setExpanded] = useState(false);
         const current = new Date();
-        const tdate = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
         return(
             <Box sx={{
                     display: 'flex',

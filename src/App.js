@@ -1,6 +1,5 @@
-import React,{useState, useEffect} from "react";
+import React from "react";
 import {
-  Typography,
   Container, 
   CssBaseline, 
   GlobalStyles,
@@ -8,7 +7,6 @@ import {
 
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
-import Tasks from "./Components/Tasks";
 import AddTask from './Components/AddTask';
 
 const theme = createTheme({
