@@ -43,7 +43,7 @@ const Tasks = ({loading, setLoading, tasks, setTask}) =>{
             >
                 <Box onClick={()=>{setExpanded(!expanded)}}  sx={{ display: 'flex', flexWrap: 'wrap',justifyContent: 'space-between', }}>
                     <Typography  sx={{fontWeight: '500', color:'textCus.primary'}} variant="h6" gutterBottom component="div">
-                        {num}. {title}<br/>
+                        {num}. {expanded?title:<>{title.slice(0, 20)}...</>}<br/>
                     </Typography>
                     <div>
                         <Button
