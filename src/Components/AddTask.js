@@ -122,13 +122,17 @@ const AddTask = () =>{
                         sx={{ marginTop:3 }} 
                         type="date" 
                         fullWidth
-                        InputLabelProps={{ shrink: true }}
+                        InputLabelProps={{ 
+                            shrink: true,
+                            min: "2022-03-03",
+                        }}
                         label="Task Deadline" 
                         id="taskDeadline"
                         value={date}
                         onChange={(e)=>{
                             setDate(e.target.value);
                         }}
+                        minDate = {new Date()}
                     />
                     <Button 
                         sx={{backgroundColor:'backgroundCus.primary', color:'textCus.secondary',  marginTop:3}}  

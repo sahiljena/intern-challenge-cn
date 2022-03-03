@@ -37,7 +37,7 @@ const Tasks = ({loading, setLoading, tasks, setTask, setUpdate}) =>{
                     borderRadius: 1,
                     m:1,
                     p:1,
-                    boxShadow: 2,
+                    boxShadow: 5,
                 }}
             >
                 <Box onClick={()=>{setExpanded(!expanded)}}  sx={{ display: 'flex', flexWrap: 'wrap',justifyContent: 'space-between', }}>
