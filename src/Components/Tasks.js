@@ -5,7 +5,7 @@ import {
     Box,
     } from '@mui/material';
 
-const Tasks = ({loading, setLoading, tasks, setTask}) =>{
+const Tasks = ({loading, setLoading, tasks, setTask, setUpdate}) =>{
 
     
 
@@ -15,14 +15,15 @@ const Tasks = ({loading, setLoading, tasks, setTask}) =>{
             method: 'DELETE',
         })
         
-        fetch(
-            "http://localhost:3000/tasks")
-            .then((res) => res.json())
-            .then((tasks) => {
-                setLoading(false);
-                setTask(tasks);
-                //console.log(tasks);
-        })
+        // fetch(
+        //     "http://localhost:3000/tasks")
+        //     .then((res) => res.json())
+        //     .then((tasks) => {
+        //         setLoading(false);
+        //         setTask(tasks);
+        //         //console.log(tasks);
+        // })
+        setUpdate(true);
     }
 
     const Item = ({title, description, num, id, deadline}) =>{

@@ -38,6 +38,8 @@ const AddTask = () =>{
     const [taskTitle, setTaskTitle] = useState("");
     const [date, setDate] = useState("");
     const [taskDesc, setTaskDesc] = useState("");
+
+    const [update, setUpdate] = useState(false);
     
 
     const fetchTasks = () =>{
@@ -47,6 +49,7 @@ const AddTask = () =>{
             .then((tasks) => {
                 setLoading(false);
                 setTask(tasks);
+                setUpdate(false);
                 //console.log(tasks);
             })
     }
@@ -66,8 +69,9 @@ const AddTask = () =>{
         })
             .then(response => response.json())
             .then(data => console.log(data));
-        fetchTasks();
-        fetchTasks();
+        // fetchTasks();
+        // fetchTasks();
+        setUpdate(true);
         setOpen(false);
         setTaskTitle("");
         setTaskDesc("");
@@ -77,7 +81,7 @@ const AddTask = () =>{
     
     useEffect(() => {
         fetchTasks();
-    }, []);
+    }, [update]);
 
     return(
         <>
@@ -117,7 +121,8 @@ const AddTask = () =>{
                     <TextField 
                         sx={{ marginTop:3 }} 
                         type="date" 
-                        fullWidth 
+                        fullWidth
+                        InputLabelProps={{ shrink: true }}
                         label="Task Deadline" 
                         id="taskDeadline"
                         value={date}
@@ -143,6 +148,7 @@ const AddTask = () =>{
                     setLoading={setLoading}
                     setTask={setTask}
                     tasks={tasks}
+                    setUpdate={setUpdate}
                 />
             </div>
         </>
